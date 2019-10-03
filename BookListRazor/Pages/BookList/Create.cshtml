@@ -1,8 +1,45 @@
 ﻿@page
 @model BookListRazor.Pages.BookList.CreateModel
-@{
-    ViewData["Title"] = "Create";
-}
 
-<h1>Create</h1>
+
+<br />
+<h2 class="text-info">Create New Book</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.Author"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Author" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.ISBN"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.ISBN" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
 
