@@ -12,6 +12,7 @@ namespace BookListRazor.Controllers
     [ApiController]
     public class BookController : Controller
     {
+        //t2
         private readonly ApplicationDbContext _db;
 
         public BookController(ApplicationDbContext db)
