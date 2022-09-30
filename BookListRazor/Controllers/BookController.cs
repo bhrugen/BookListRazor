@@ -37,5 +37,18 @@ namespace BookListRazor.Controllers
             await _db.SaveChangesAsync();
             return Json(new { success = true, message = "Delete successful" });
         }
+
+        [HttpPOST]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var bookFromDb = await _db.Book.FirstOrDefaultAsync(u => u.Id == id);
+            if (bookFromDb == null)
+            {
+                return Json(new { success = false, message = "Error while Deleting" });
+            }
+            _db.Book.Remove(bookFromDb);
+            await _db.SaveChangesAsync();
+            return Json(new { success = true, message = "Delete successful" });
+        }
     }
 }
